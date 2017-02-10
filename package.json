@@ -1,21 +1,26 @@
 {
-  "name": "wp2-demo",
+  "name": "webpack2-demo",
   "version": "1.0.0",
-  "description": "Demonstration of Webpack",
+  "description": "Demonstrations of Webpack2",
   "main": "index.js",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js"
+    "server": "nodemon server/server.js",
+    "b1": "webpack --config=step-01/webpack.config.js",
+    "clean:b1": "rimraf step-01/dist"
   },
   "keywords": [],
   "author": "Vijay Dharap (@dharapvj)",
   "license": "MIT",
   "devDependencies": {
+    "chance": "^1.0.4",
     "eslint": "^3.14.1",
     "json-server": "^0.9.4",
+    "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
+    "rimraf": "^2.5.4",
     "typescript": "^2.1.5",
-    "webpack": "^1.14.0"
+    "webpack": "^2.2.0"
   }
 }
