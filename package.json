@@ -2,18 +2,21 @@
   "name": "webpack2-demo",
   "version": "1.0.0",
   "description": "Demonstrations of Webpack2",
-  "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
-    "b1": "webpack --config=step-01/webpack.config.js",
-    "clean:b1": "rimraf step-01/dist"
+    "s1": "webpack --config=step-01-hello-webpack/webpack.config.js",
+    "clean:s1": "rimraf step-01-hello-webpack/dist",
+    "s2": "webpack --config=step-02-with-webpack/webpack.config.js",
+    "s2:prod": "webpack -p --config=step-02-with-webpack/webpack.config.js",
+    "clean:s2": "rimraf step-02-with-webpack/dist"
   },
-  "keywords": [],
   "author": "Vijay Dharap (@dharapvj)",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
     "chalk": "^1.1.3",
     "chance": "^1.0.4",
     "eslint": "^3.14.1",
