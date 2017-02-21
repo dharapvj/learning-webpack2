@@ -1,24 +1,30 @@
 // server.js
-var jsonServer = require('json-server');
-var express = require('express');
-var morgan = require('morgan');
-var compression = require('compression');
+let jsonServer = require('json-server');
+let express = require('express');
+let morgan = require('morgan');
+let compression = require('compression');
 
-var server = express();
+let server = express();
 server.use(morgan('dev'));
-//server.use(compression());
 
-server.use('/step-00',express.static('step-00-no-webpack'));
-server.use('/step-01',express.static('step-01-hello-webpack'));
-server.use('/step-02',express.static('step-02-with-webpack'));
-server.use('/step-03',express.static('step-03'));
-server.use('/step-04',express.static('step-04'));
-server.use('/step-05',express.static('step-05'));
-server.use('/step-06',express.static('step-06'));
-server.use('/step-07',express.static('step-07'));
-server.use('/step-08',express.static('step-08'));
-server.use('/step-09',express.static('step-09'));
-server.use('/step-10',express.static('step-10'));
+// to compress the content over the wire
+server.use(compression());
+
+// to disable caching - use lower options
+let opts = {maxAge: '1y'};
+// let opts = {maxAge: 0, etag: false, lastModified: false};
+
+server.use('/step-00',express.static('step-00-no-webpack', opts));
+server.use('/step-01',express.static('step-01-hello-webpack', opts));
+server.use('/step-02',express.static('step-02-with-webpack', opts));
+server.use('/step-03',express.static('step-03-loaders', opts));
+server.use('/step-04',express.static('step-04', opts));
+server.use('/step-05',express.static('step-05', opts));
+server.use('/step-06',express.static('step-06', opts));
+server.use('/step-07',express.static('step-07', opts));
+server.use('/step-08',express.static('step-08', opts));
+server.use('/step-09',express.static('step-09', opts));
+server.use('/step-10',express.static('step-10', opts));
 
 server.use('/services', jsonServer.router('db.json'));
 
