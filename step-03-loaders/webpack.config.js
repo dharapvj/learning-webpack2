@@ -28,22 +28,12 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015']
-          }
-        }
-      },
-      {
         test: /\.json$/,
         use: 'json-loader'
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-        // exclude: [helpers.root('src', 'styles')]
       },
       {
         test: /\.scss$/,
@@ -56,21 +46,37 @@ module.exports = {
             loader: "sass-loader" // compiles Sass to CSS
           }
         ],
-        // exclude: [helpers.root('src', 'styles')]
       },
       {
-        test: /\.(jpg|png|gif)$/,
-        use: 'file-loader'
+        test: /\.(jpg|png|gif|svg)$/,
+        use: { 
+          loader:'file-loader',
+          options: {
+            publicPath:'dist/'
+          }
+        }
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'url-loader?limit=10000&minetype=application/font-woff'
+        use: {
+          loader:'url-loader',
+          options: {
+            limit:10000,
+            mimetype:'application/font-woff',
+            publicPath:'dist/'
+          }
+        }
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader'
+        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: {
+          loader:'file-loader',
+          options: {
+            publicPath:'dist/'
+          }
+        }
       },
     ]
   },
-  stats: "errors-only"
+  stats: "verbose"
 }
