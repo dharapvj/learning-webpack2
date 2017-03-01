@@ -6,11 +6,12 @@
   "scripts": {
     "server": "nodemon server/server.js",
     "s1": "webpack --config=step-01-hello-webpack/webpack.config.js",
+    "s1:watch": "webpack --config=step-01-hello-webpack/webpack.config.js --watch --progress",
     "clean:s1": "rimraf step-01-hello-webpack/dist",
-    "s2": "webpack --config=step-02-with-webpack/webpack.config.js",
+    "s2": "webpack --config=step-02-with-webpack/webpack.config.js --watch --progress",
     "s2:prod": "webpack -p --config=step-02-with-webpack/webpack.config.js",
     "clean:s2": "rimraf step-02-with-webpack/dist",
-    "s3": "webpack --config=step-03-loaders/webpack.config.js",
+    "s3": "webpack --config=step-03-loaders/webpack.config.js --watch --progress",
     "s3:prod": "webpack -p --config=step-03-loaders/webpack.config.js",
     "clean:s3": "rimraf step-03-loaders/dist"
   },

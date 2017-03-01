@@ -11,8 +11,8 @@ server.use(morgan('dev'));
 server.use(compression());
 
 // to disable caching - use lower options
-let opts = {maxAge: '1y'};
-// let opts = {maxAge: 0, etag: false, lastModified: false};
+// let opts = {maxAge: '1y'};
+let opts = {maxAge: 0, etag: false, lastModified: false};
 
 server.use('/step-00',express.static('step-00-no-webpack', opts));
 server.use('/step-01',express.static('step-01-hello-webpack', opts));
