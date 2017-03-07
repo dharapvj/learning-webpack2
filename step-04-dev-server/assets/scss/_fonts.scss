@@ -1,0 +1,12 @@
+$app-font-path: '../fonts/';
+
+$roboto: 'Roboto-Regular-webfont';
+
+@at-root {
+  @font-face {
+    font-family: 'Roboto';
+    src: url('#{$app-font-path}#{$roboto}.eot');
+    src: url('#{$app-font-path}#{$roboto}.eot?#iefix') format('embedded-opentype'),
+         url('#{$app-font-path}#{$roboto}.woff') format('woff');
+  }
+}

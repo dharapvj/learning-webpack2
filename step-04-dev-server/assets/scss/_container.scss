@@ -1,0 +1,15 @@
+$title-font: normal 2.0rem;
+$cool-purple: #853ED5;
+$box-shadow-bottom-only: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+
+h1.title {
+  font: $title-font;
+  color: $cool-purple;
+}
+
+div.container {
+  color: $cool-purple;
+  background: #fff;
+  width: 90%;
+  box-shadow: $box-shadow-bottom-only;
+}
