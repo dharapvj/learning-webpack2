@@ -6,7 +6,6 @@ module.exports = {
 	  path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  // required ONLY for -p (production) build of webpack
   resolve: {
     // which extensions should be considered for resolution - automatically?
     // any extensions "referred" via files with these extensions are resolved as well.
@@ -18,6 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
+        // required ONLY for -p (production) build of webpack
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -88,7 +88,7 @@ module.exports = {
             publicPath:'dist/'
           }
         }
-      },
+      }
     ]
   },
   stats: "verbose"

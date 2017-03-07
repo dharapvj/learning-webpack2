@@ -12,7 +12,7 @@ let iphone = {
 	'lightning': true
 };
 let mobile = pick(iphone,['RAM', 'screen']);
-console.log( 'iphone: ', iphone, ' mobile: ', mobile);
+// console.log( 'iphone: ', iphone, ' mobile: ', mobile);
 let lodashCont = document.getElementById('lodash');
 let lodashEl = document.createElement('div');
 lodashEl.innerHTML=`Original Object <span class='code'>${JSON.stringify(iphone)}</span>. <br>"Pick"ed Object <span class='code'>${JSON.stringify(mobile)}</span>`;

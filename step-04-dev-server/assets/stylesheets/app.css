@@ -22,8 +22,12 @@ p{
     border-radius: 3px;
     float:left;
     width: 400px;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
+}
+
+.box h3 {
+    margin: 5px 0;
 }
 
 .cssdemo {

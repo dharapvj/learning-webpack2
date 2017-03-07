@@ -5,13 +5,26 @@
 // import pick from 'lodash';
 import pick from 'lodash/pick';
 
-let src = {
-	a: 'a',
-	b: 'b',
-	c: 'c'
+let iphone = {
+	RAM: '8gb',
+	retina: true,
+	screen: 'touch',
+	'lightning': true
 };
-let dest = pick(src,['b', 'c']);
-console.log( 'src: ', src, ' dest: ', dest);
+let mobile = pick(iphone,['RAM', 'screen']);
+// console.log( 'iphone: ', iphone, ' mobile: ', mobile);
+
+// Load HTML fragment for this demo.
+let jsLoadhtml = require('html-loader!./templates/js-loading.html');
+let jsLoadCont = document.getElementsByClassName('jsload')[0];
+jsLoadCont.innerHTML = jsLoadhtml;
+
+// load JS loaded content into it
+let iphoneSpan = document.getElementsByClassName('code iphone')[0];
+iphoneSpan.innerHTML=JSON.stringify(iphone);
+let mobSpan = document.getElementsByClassName('code mobile')[0];
+mobSpan.innerHTML=JSON.stringify(mobile);
+
 
 /*
  Showcase 2 - CSS Loading (and bundling inside bundle.JS)
