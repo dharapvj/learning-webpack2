@@ -21,9 +21,9 @@ jsLoadCont.innerHTML = jsLoadHtml;
 
 // load JS loaded content into it
 let iphoneSpan = document.getElementsByClassName('code iphone')[0];
-iphoneSpan.innerHTML=JSON.stringify(iphone);
+iphoneSpan.innerHTML=JSON.stringify(iphone,null,2);
 let mobSpan = document.getElementsByClassName('code mobile')[0];
-mobSpan.innerHTML=JSON.stringify(mobile);
+mobSpan.innerHTML=JSON.stringify(mobile,null,2);
 
 
 /*

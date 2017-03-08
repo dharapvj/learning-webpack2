@@ -88,7 +88,7 @@ module.exports = {
             publicPath:'dist/'
           }
         }
-      },
+      }
     ]
   },
   stats: "verbose",
@@ -96,6 +96,6 @@ module.exports = {
     contentBase: path.resolve(__dirname),
     publicPath: '/dist/',  // important to not use absolute path here!
     compress: true,
-    port: 9000
+    port: 3000
   }
 }

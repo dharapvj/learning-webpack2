@@ -4,62 +4,12 @@
   </head>
   <body>
     <h3 class="warn">Uses webpack-dev-server. Check that the "express" server is not running separately anymore. </h3>
-
-<div class="box">
-  <h3>Basic JS Loading Demo</h3>
-    <p>See how we loaded <code>lodash</code> library and executed it's <code>pick()</code> function</p>
-    <div>
-      <pre>
-let iphone = {
-	RAM: '8gb',
-	retina: true,
-	screen: 'touch',
-	'lightning': true
-};
-let mobile = _.pick(iphone,['RAM', 'screen']);
-      </pre>
-    </div>
-    <div id="lodash"></div>
-</div>
-<div class="box">
-  <h3>Basic CSS Loading Demo</h3>
-  <p>Below text styling is loaded from app.css file.</p>
-    <div class="cssdemo">
-      this a brown color text at regular font-size
-    </div>
-</div>
-    <div class="box">
-      <h3>sass-loader demonstration</h3>
-      <div>
-          <h1 class="title">SCSS driven container</h1>
-          <div class="container">This container's style is defined in assets/scss/container.scss file.</div>
-      </div>
-    </div>
-    <div class="box">
-      <h3>json-loader demonstration</h3>
-      <h3>Some of my friends</h3>
-      <ul id="friends">
-      </ul>
-    </div>
-    <div class="box">
-      <h3>font loading via file-loader / url-loader</h3>
-      <span class="robotofont">Text in Roboto font</span>
-    </div>
-    <div class="box">
-      <h3>image loading via file-loader</h3>
-      <div class="img-types">
-        <span>.gif</span>
-        <span>.png</span>
-        <span>.jpg</span>
-        <span>.svg</span>
-      </div>
-      <div class="clear"></div>
-      <div class="img loading"></div>
-      <div class="img angular"></div>
-      <div class="img bootstrap"></div>
-      <div class="img kiwi"></div>
-      
-    </div>
+    <div class="box jsload"></div>
+    <div class="box cssload"></div>
+    <div class="box sassload"></div>
+    <div class="box jsonload"></div>
+    <div class="box fontload"></div>
+    <div class="box imgload"></div>
     <script src="dist/bundle.js"></script>
   </body>
 </html>
