@@ -1,0 +1,80 @@
+/* importing from withing node_modules*/
+@import "~normalize.css";
+
+/*importing withing the app*/
+@import "./theme.css";
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2.0rem;
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+.box{
+    border: 1px solid deepskyblue;
+    border-radius: 3px;
+    float:left;
+    width: 400px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.box h3 {
+    margin: 5px 0;
+}
+
+.cssdemo {
+    color: brown;
+    font-weight: bolder;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+div.img{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-size: cover;
+    float: left;
+}
+
+.img-types > span{
+    width: 50px;
+    margin: 0 3px;
+    display: inline-block;
+    text-align: center;
+}
+
+div.loading{
+    background-image: url('../images/loading.gif');
+}
+div.angular{
+    background-image: url('../images/angularjs.png');
+}
+div.bootstrap{
+    background-image: url('../images/bootstrap.jpg');
+}
+div.kiwi{
+    background-image: url('../images/kiwi.svg');
+}
+
+.warn {
+    background-color: pink;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+pre.code {
+    background-color: lightgrey;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-family: 'Monaco';
+    font-size: 1.4rem;
+}
