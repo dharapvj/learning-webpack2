@@ -89,3 +89,20 @@ addFrnds(frndC.getFriends());
 let imgLoadHtml = require('html-loader!./templates/img-loading.html');
 let imgLoadCont = document.getElementsByClassName('imgload')[0];
 imgLoadCont.innerHTML = imgLoadHtml;
+
+/*
+ Showcase 8 - demonstration of ProvidePlugin
+*/
+import jqueryDepModule from './js/jqueryDependent.module';
+new jqueryDepModule();
+
+/*
+ Showcase 9 - DefinePlugin demonstration
+*/
+// Load HTML fragment for this demo.
+let defPlugHtml = require('html-loader!./templates/define-plugin.html');
+let defPlugCont = document.getElementsByClassName('defPlug')[0];
+defPlugCont.innerHTML = defPlugHtml;
+
+let definedValues = `Environment is <b>${ENV}</b>. Login Url is <b>${LOGIN_URL}</b>.`;
+document.querySelectorAll('.defPlug .replace')[0].innerHTML = definedValues;

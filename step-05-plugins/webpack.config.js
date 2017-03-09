@@ -1,3 +1,4 @@
+// console.log('current Nov Env is',process.env.NODE_ENV);
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':

@@ -4,10 +4,19 @@ const commonConfig = require('./webpack.common.js'); // the settings that are co
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 
+const METADATA = {
+    LOGIN_URL: 'http://example.com/login',
+    LOGOUT_URL: 'http://example.com/logout'
+}
 
-module.exports = function (env) {
-  return webpackMerge(commonConfig({env}), {
+module.exports = function (opts) {
+  return webpackMerge(commonConfig(opts), {
     plugins: [
+      new DefinePlugin({
+        'ENV': JSON.stringify(opts.env),
+        'LOGIN_URL': JSON.stringify(METADATA.LOGIN_URL),
+        'LOGOUT_URL': JSON.stringify(METADATA.LOGOUT_URL),
+      }),
       // NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
       new UglifyJsPlugin({
         // beautify: true, //debug

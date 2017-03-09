@@ -112,7 +112,7 @@ module.exports = function(opts) {
       new ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
-        "window.jQuery": "jquery"
+        "window.jQuery": "jquery" // for Angular 1.x
       }),
     ],
     stats: "verbose",

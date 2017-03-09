@@ -7,11 +7,11 @@ const METADATA = {
     LOGOUT_URL: 'http://localhost:3001/logout'
 }
 
-module.exports = function (env) {
-  return webpackMerge(commonConfig({env}), {
+module.exports = function (opts) {
+  return webpackMerge(commonConfig(opts), {
     plugins: [
-       new DefinePlugin({
-        'ENV': JSON.stringify(METADATA.ENV),
+      new DefinePlugin({
+        'ENV': JSON.stringify(opts.env),
         'LOGIN_URL': JSON.stringify(METADATA.LOGIN_URL),
         'LOGOUT_URL': JSON.stringify(METADATA.LOGOUT_URL),
       })
