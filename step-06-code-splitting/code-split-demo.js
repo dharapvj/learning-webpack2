@@ -1,0 +1,27 @@
+/*import a from "./a";
+
+import("./b").then(function(b) {
+    console.log("b loaded", b);
+})
+
+function loadC(name) {
+    return import("./c/" + name);
+}
+
+Promise.all([loadC("1"), loadC("2")]).then(function(arr) {
+    console.log("c/1 and c/2 loaded", arr);
+});*/
+
+const element = document.createElement('div');
+
+element.innerHTML = 'Click me to lazy load text which will get replaced here.';
+
+element.onclick = () => {
+  import('./b').then((lazy) => {
+    element.textContent = lazy.default;
+  }).catch((err) => {
+    console.error(err);
+  });
+};
+
+document.body.appendChild(element);

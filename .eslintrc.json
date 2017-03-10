@@ -10,7 +10,8 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "sourceType": "module"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
     "rules": {
         "no-const-assign": "warn",

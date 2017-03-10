@@ -16,13 +16,18 @@
     "clean:s3": "rimraf step-03-loaders/dist",
     "s4": "webpack-dev-server --config=step-04-dev-server/webpack.config.js --inline --watch --progress",
     "s5": "webpack-dev-server --config=step-05-plugins/webpack.config.js --inline --watch --progress",
-    "s5:prod": "cross-env NODE_ENV=production webpack-dev-server -p --config=step-05-plugins/webpack.config.js --inline --watch --progress"
+    "s5:prod": "cross-env NODE_ENV=production webpack-dev-server -p --config=step-05-plugins/webpack.config.js --inline --watch --progress",
+    "s6": "webpack --config=step-06-code-splitting/webpack.config.js --watch --progress",
+    "s6:prod": "webpack -p --config=step-06-code-splitting/webpack.config.js",
+    "clean:s6": "rimraf step-06-code-splitting/dist"
   },
   "author": "Vijay Dharap (@dharapvj)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-es2015": "^6.22.0",
     "chalk": "^1.1.3",
     "chance": "^1.0.4",
