@@ -1,4 +1,7 @@
 import * as $ from 'jquery';
+import './app.css';
+
+// let $ = require('jquery');
 $(document).ready( () => {
   console.log('document is ready! Let\'s roll');
   const element = document.createElement('div');
@@ -16,7 +19,6 @@ $(document).ready( () => {
   document.body.appendChild(element);
   $('div')
     .css('border','1px solid blue')
-    .css('font-family', 'Tahoma')
     .css('padding', '4px')
     .css('border-radius', '4');
 });

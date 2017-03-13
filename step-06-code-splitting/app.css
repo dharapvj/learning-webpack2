@@ -1,0 +1,11 @@
+/* importing from withing node_modules*/
+@import "~normalize.css";
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2.0rem;
+}
