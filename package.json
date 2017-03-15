@@ -17,6 +17,7 @@
     "s4": "webpack-dev-server --config=step-04-dev-server/webpack.config.js --inline --watch --progress",
     "s5": "webpack-dev-server --config=step-05-plugins/webpack.config.js --inline --watch --progress",
     "s5:prod": "cross-env NODE_ENV=production webpack-dev-server -p --config=step-05-plugins/webpack.config.js --inline --watch --progress",
+    "clean:s5:dll": "rimraf step-05-plugins/dll",
     "s6": "webpack --config=step-06-code-splitting/webpack.config.js --watch --progress",
     "s6:prod": "webpack -p --config=step-06-code-splitting/webpack.config.js",
     "clean:s6": "rimraf step-06-code-splitting/dist"
@@ -24,6 +25,7 @@
   "author": "Vijay Dharap (@dharapvj)",
   "license": "MIT",
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^1.0.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -51,9 +53,12 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.4.1",
+    "webpack-dll-bundles-plugin": "^1.0.0-beta.5",
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "lodash.pick": "^4.4.0",
+    "rangeslider.js": "^2.3.0"
   }
 }

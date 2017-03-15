@@ -1,9 +1,9 @@
 /*
  Showcase 1 - JS Loading (and bundling inside bundle.JS)
  */
-// Show "tree shaking" impact of 
-// import pick from 'lodash';
 import pick from 'lodash/pick';
+// Above is not a tree shaking really.
+// Its just a hack provided by lodash for smaller lib size for CommonJS based lib
 
 let iphone = {
 	RAM: '8gb',
@@ -84,8 +84,16 @@ addFrnds(frndC.getFriends());
 
 /*
  Showcase 7 - image loading via file-loader.
-*/
+ */
 // Load HTML fragment for this demo.
 let imgLoadHtml = require('html-loader!./templates/img-loading.html');
 let imgLoadCont = document.getElementsByClassName('imgload')[0];
 imgLoadCont.innerHTML = imgLoadHtml;
+
+/*
+ Showcase 8 - Tree Shaking
+ */
+// Since we only referred "bake" function, shake function is not included in the bundle.
+// NOTE: tree-shaking only works when we invoke UglifyJS plugin (default in production environment)
+import { bake } from './js/tree-shaking-demo';
+bake();
