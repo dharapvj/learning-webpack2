@@ -22,10 +22,6 @@ server.use('/step-03',express.static('step-03-loaders', opts));
 // server.use('/step-04',express.static('step-04', opts));
 // server.use('/step-05',express.static('step-05', opts));
 server.use('/step-06',express.static('step-06-code-splitting/dist', opts));
-server.use('/step-07',express.static('step-07', opts));
-server.use('/step-08',express.static('step-08', opts));
-server.use('/step-09',express.static('step-09', opts));
-server.use('/step-10',express.static('step-10', opts));
 
 server.use('/services', jsonServer.router('db.json'));
 
