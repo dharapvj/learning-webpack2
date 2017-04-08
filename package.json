@@ -5,28 +5,25 @@
   "private": true,
   "scripts": {
     "server": "nodemon server/server.js",
-    "s1":       "webpack --config=step-01-hello-webpack/webpack.config.js",
-    "s1:watch": "webpack --config=step-01-hello-webpack/webpack.config.js --watch --progress",
 
-    "s2":      "webpack    --config=step-02-with-webpack/webpack.config.js --watch --progress",
-    "s2:prod": "webpack -p --config=step-02-with-webpack/webpack.config.js",
+    "s1":      "webpack    --config=step-01-with-webpack/webpack.config.js --watch --progress",
+    "s1:prod": "webpack -p --config=step-01-with-webpack/webpack.config.js",
 
-    "s3":      "webpack    --config=step-03-loaders/webpack.config.js --watch --progress",
-    "s3:prod": "webpack -p --config=step-03-loaders/webpack.config.js",
+    "s2":      "webpack    --config=step-02-loaders/webpack.config.js --watch --progress",
+    "s2:prod": "webpack -p --config=step-02-loaders/webpack.config.js",
 
-    "s4": "webpack-dev-server --config=step-04-dev-server/webpack.config.js --inline --watch --progress",
+    "s3": "webpack-dev-server --config=step-03-dev-server/webpack.config.js --inline --watch --progress",
 
-    "s5": "webpack-dev-server --config=step-05-plugins/webpack.config.js --inline --watch --progress",
-    "s5:prod": "cross-env NODE_ENV=production webpack-dev-server --config=step-05-plugins/webpack.config.js --inline --watch --progress",
+    "s4": "webpack-dev-server --config=step-04-plugins/webpack.config.js --inline --watch --progress",
+    "s4:prod": "cross-env NODE_ENV=production webpack-dev-server --config=step-04-plugins/webpack.config.js --inline --watch --progress",
 
-    "s6":      "webpack    --config=step-06-code-splitting/webpack.config.js --watch --progress",
-    "s6:prod": "webpack -p --config=step-06-code-splitting/webpack.config.js",
+    "s5":      "webpack    --config=step-05-code-splitting/webpack.config.js --watch --progress",
+    "s5:prod": "webpack -p --config=step-05-code-splitting/webpack.config.js",
 
-    "clean:s1": "rimraf step-01-hello-webpack/dist",
-    "clean:s2": "rimraf step-02-with-webpack/dist",
-    "clean:s3": "rimraf step-03-loaders/dist",
-    "clean:s5:dll": "rimraf step-05-plugins/dll",
-    "clean:s6": "rimraf step-06-code-splitting/dist"
+    "clean:s1": "rimraf step-01-with-webpack/dist",
+    "clean:s2": "rimraf step-02-loaders/dist",
+    "clean:s4:dll": "rimraf step-04-plugins/dll",
+    "clean:s5": "rimraf step-05-code-splitting/dist"
   },
   "author": "Vijay Dharap (@dharapvj)",
   "license": "MIT",
