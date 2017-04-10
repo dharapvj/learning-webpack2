@@ -2,14 +2,65 @@
   <head>
     <title><%=htmlWebpackPlugin.options.title%></title>
   </head>
+  <style>
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2.0rem;
+    background-image: linear-gradient(to bottom, #f9f9ff 0%,#cbebff 69%,#a1dbff 100%)
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+.box{
+    border: 1px solid deepskyblue;
+    border-radius: 3px;
+    float:left;
+    width: 400px;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+    background-color: white;
+}
+
+.box:before, .box:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 10px;
+    max-width: 300px;
+    background: #777;
+    transform: rotate(-3deg);
+    box-shadow: 0 15px 10px #777;
+}
+
+.box:after {
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+
+.box h3 {
+    margin: 5px 0;
+}
+
+.warn {
+    background-color: pink;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+  </style>
   <body>
     <h3 class="warn">Uses webpack-dev-server. Check that the "express" server is not running separately anymore. </h3>
-    <div class="box jsload"></div>
-    <div class="box cssload"></div>
-    <div class="box sassload"></div>
-    <div class="box jsonload"></div>
-    <div class="box fontload"></div>
-    <div class="box imgload"></div>
-    <div class="box defPlug"></div>
+    <div class="box defPlugload"></div>
   </body>
 </html>

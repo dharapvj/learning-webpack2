@@ -1,13 +1,11 @@
-const path = require('path');
-const root = path.resolve(__dirname, '..');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
-const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
 
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 // Uncomment for DLL Plugin demo - part 1
 /*
+const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 */
