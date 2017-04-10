@@ -1,8 +1,0 @@
-{
-    "friends":[
-        { "id": 1, "name":"Sriram", "location": "Chennai"},
-        { "id": 2, "name":"Atul", "location": "Germany"},
-        { "id": 3, "name":"Avinash", "location": "Pune"},
-        { "id": 1, "name":"Vivek", "location": "Bengaluru"}
-    ]
-}

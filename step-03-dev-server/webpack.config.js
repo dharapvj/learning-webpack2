@@ -28,67 +28,9 @@ module.exports = {
         }
       },
       {
-        test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {presets: ['es2015']}
-          },
-          {
-            loader: 'ts-loader'
-          }
-        ]
-      }, 
-      {
-        test: /\.json$/,
-        use: 'json-loader'
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          }, {
-            loader: "css-loader" // translates CSS into CommonJS
-          }, {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ],
-      },
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: { 
-          loader:'file-loader',
-          options: {
-            publicPath:'dist/'
-          }
-        }
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: {
-          loader:'url-loader',
-          options: {
-            limit:10000,
-            mimetype:'application/font-woff',
-            publicPath:'dist/'
-          }
-        }
-      },
-      {
-        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: {
-          loader:'file-loader',
-          options: {
-            publicPath:'dist/'
-          }
-        }
-      }
     ]
   },
   stats: "verbose",
