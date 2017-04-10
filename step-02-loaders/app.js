@@ -1,6 +1,19 @@
-/*
- Showcase 1 - JS Loading (and bundling inside bundle.JS)
- */
+/* UTILITY FUNCTIONS */
+const pushJson = function(classSelector, obj){
+	let parent = document.getElementsByClassName(classSelector)[0];
+	parent.innerHTML=JSON.stringify(obj,null,2);
+};
+
+const loadHTML = function(sectionName) {
+	let html = require(`html-loader!./templates/${sectionName}-loading.html`);
+	let loadContainer = document.getElementsByClassName(`${sectionName}load`)[0];
+	loadContainer.innerHTML = html;
+};
+
+
+// ========================
+//  Showcase 1 - JS Loading (and bundling inside bundle.JS)
+// ========================
 import pick from 'lodash/pick';
 // Above is not a tree shaking really.
 // Its just a hack provided by lodash for smaller lib size for CommonJS based lib
@@ -14,45 +27,41 @@ let iphone = {
 let mobile = pick(iphone,['RAM', 'screen']);
 // console.log( 'iphone: ', iphone, ' mobile: ', mobile);
 
-// Load HTML fragment for this demo.
-let jsLoadHtml = require('html-loader!./templates/js-loading.html');
-let jsLoadCont = document.getElementsByClassName('jsload')[0];
-jsLoadCont.innerHTML = jsLoadHtml;
-
-// load JS loaded content into it
-let iphoneSpan = document.getElementsByClassName('code iphone')[0];
-iphoneSpan.innerHTML=JSON.stringify(iphone,null,2);
-let mobSpan = document.getElementsByClassName('code mobile')[0];
-mobSpan.innerHTML=JSON.stringify(mobile,null,2);
+loadHTML('js');
+pushJson('code iphone', iphone);
+pushJson('code mobile', mobile);
 
 
-/*
- Showcase 2 - CSS Loading (and bundling inside bundle.JS)
- */
+// ========================
+// Showcase 2 - CSS Loading (and bundling inside bundle.JS)
+// ========================
 import styles from './assets/stylesheets/app.css';
-// Load HTML fragment for this demo.
-let cssLoadHtml = require('html-loader!./templates/css-loading.html');
-let cssLoadCont = document.getElementsByClassName('cssload')[0];
-cssLoadCont.innerHTML = cssLoadHtml;
+loadHTML('css');
 
 
 /*
- Showcase 3 - SCSS Loading (and bundling inside bundle.JS)
+ Showcase 3 - Tree Shaking
  */
-import './assets/scss/_container.scss';
+// Since we only referred "bake" function, shake function is not included in the bundle.
+// NOTE: tree-shaking only works when we invoke UglifyJS plugin (default in production environment)
+import { bake } from './js/tree-shaking-demo';
+bake();
 
-// Load HTML fragment for this demo.
-let sassLoadHtml = require('html-loader!./templates/sass-loading.html');
-let sassLoadCont = document.getElementsByClassName('sassload')[0];
-sassLoadCont.innerHTML = sassLoadHtml;
+// ===============
+// Below loaders are for self-study. Had to comment them off
+// to make sure I make use of 1 hr effectively.
+// ===============
 
 /*
- Showcase 4 - JSON Loading (and bundling inside bundle.JS)
+ Showcase 4 - SCSS Loading (and bundling inside bundle.JS)
  */
-// Load HTML fragment for this demo.
-let jsonLoadHtml = require('html-loader!./templates/json-loading.html');
-let jsonLoadCont = document.getElementsByClassName('jsonload')[0];
-jsonLoadCont.innerHTML = jsonLoadHtml;
+/*import './assets/scss/_container.scss';
+loadHTML('sass');
+*/
+/*
+ Showcase 5 - JSON Loading (and bundling inside bundle.JS)
+ */
+/*loadHTML('json');
 
 import db from './assets/data/db.json';
 let addFrnds = (frnds) => {
@@ -64,36 +73,25 @@ let addFrnds = (frnds) => {
 	});
 }
 addFrnds(db.friends);
-
+*/
 /*
- Showcase 5 - Font Loading (but NOT bundling inside bundle.JS)
+ Showcase 6 - Font Loading (but NOT bundling inside bundle.JS)
  */
-import './assets/scss/_fonts.scss';
+/*import './assets/scss/_fonts.scss';
 import './assets/scss/font-demo.scss';
-// Load HTML fragment for this demo.
-let fontLoadHtml = require('html-loader!./templates/font-loading.html');
-let fontLoadCont = document.getElementsByClassName('fontload')[0];
-fontLoadCont.innerHTML = fontLoadHtml;
+loadHTML('font');
+*/
 
 /*
- Showcase 6 - Typescript loading (and bundling inside bundle.js)
+ Showcase 7 - Typescript loading (and bundling inside bundle.js)
  */
-import { FriendComponent } from './ts/dummy.ts';
+/*import { FriendComponent } from './ts/dummy.ts';
 let frndC = new FriendComponent();
 addFrnds(frndC.getFriends());
-
+*/
 /*
- Showcase 7 - image loading via file-loader.
+ Showcase 8 - image loading via file-loader.
  */
 // Load HTML fragment for this demo.
-let imgLoadHtml = require('html-loader!./templates/img-loading.html');
-let imgLoadCont = document.getElementsByClassName('imgload')[0];
-imgLoadCont.innerHTML = imgLoadHtml;
-
-/*
- Showcase 8 - Tree Shaking
- */
-// Since we only referred "bake" function, shake function is not included in the bundle.
-// NOTE: tree-shaking only works when we invoke UglifyJS plugin (default in production environment)
-import { bake } from './js/tree-shaking-demo';
-bake();
+/*loadHTML('img');
+*/

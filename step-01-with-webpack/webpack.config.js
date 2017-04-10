@@ -7,6 +7,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   // required ONLY for -p (production) build of webpack
+  // as UglifyJS does not understand ES2015 syntax
   module: {
     rules: [
       {

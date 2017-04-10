@@ -4,7 +4,7 @@
   "description": "Demonstrations of Webpack2",
   "private": true,
   "scripts": {
-    "server": "nodemon server/server.js",
+    "server": "nodemon --watch server server/server.js",
 
     "s1":      "webpack    --config=step-01-with-webpack/webpack.config.js --watch --progress",
     "s1:prod": "webpack -p --config=step-01-with-webpack/webpack.config.js",

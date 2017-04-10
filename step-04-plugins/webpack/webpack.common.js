@@ -103,7 +103,7 @@ module.exports = function(opts) {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'step-05-plugins/templates/index.tmpl.html',
+        template: 'step-04-plugins/templates/index.tmpl.html',
         title: METADATA.title,
         chunksSortMode: 'dependency',
         metadata: METADATA,
