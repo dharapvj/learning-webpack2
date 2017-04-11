@@ -23,6 +23,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            cacheDirectory: path.resolve(__dirname, 'babelCache'),
             presets: [
               ['es2015', {modules: false}]
             ]
