@@ -17,8 +17,8 @@ module.exports = {
   // devtool should be carefully chosen for DEV vs PROD.
   // all eval type sourcemaps are inline and MUST NOT be used in PROD.
   // Also currently cheap-module-eval-source-map has issues in chrome
-  // devtool: 'cheap-module-eval-source-map',
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-source-map',
+  // devtool: 'eval-source-map',
   // IMPORTANT: As of Mar 2017, babel-loader is REQUIRED for "dynamic import()" statements to work
   // with below configuration of preset and plugin
   module: {

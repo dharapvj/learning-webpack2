@@ -31,6 +31,11 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      /* UNCOMMENT BELOW PORTION TO SEE ALL LOADERS WORKING */
+      /* {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [
@@ -46,10 +51,6 @@ module.exports = {
       {
         test: /\.json$/,
         use: 'json-loader'
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.scss$/,
@@ -91,7 +92,7 @@ module.exports = {
             publicPath:'dist/'
           }
         }
-      }
+      }*/
     ]
   },
   stats: "verbose"
