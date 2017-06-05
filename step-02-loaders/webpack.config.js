@@ -34,6 +34,15 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        use: { 
+          loader:'file-loader',
+          options: {
+            publicPath:'dist/'
+          }
+        }
+      },
       /* UNCOMMENT BELOW PORTION TO SEE ALL LOADERS WORKING */
       /* {
         test: /\.ts(x?)$/,
@@ -63,15 +72,6 @@ module.exports = {
             loader: "sass-loader" // compiles Sass to CSS
           }
         ],
-      },
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: { 
-          loader:'file-loader',
-          options: {
-            publicPath:'dist/'
-          }
-        }
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
