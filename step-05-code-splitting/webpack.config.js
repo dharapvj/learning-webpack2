@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -19,6 +18,19 @@ module.exports = {
   // Also currently cheap-module-eval-source-map has issues in chrome
   devtool: 'cheap-module-source-map',
   // devtool: 'eval-source-map',
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+	  minSize: 30000,
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   // IMPORTANT: As of Mar 2017, babel-loader is REQUIRED for "dynamic import()" statements to work
   // with below configuration of preset and plugin
   module: {
@@ -39,9 +51,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader'
-        })
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          "css-loader"
+        ]
       }
     ]
   },
@@ -50,12 +65,12 @@ module.exports = {
       chunksSortMode: 'dependency',
       inject: 'body'
     }),
-    new CommonsChunkPlugin({
-      name: 'vendor',
-    }),
-    // Usually, you would want to enable this only in PROD environment.
-    // HtmlWebpackPlugin is intelligent and adds the <link> for styles.css in index.html automatically.
-    new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ]
 }
 
