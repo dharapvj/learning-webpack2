@@ -44,7 +44,7 @@ module.exports = {
         }
       },
       /* UNCOMMENT BELOW PORTION TO SEE ALL LOADERS WORKING */
-      /* {
+      {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [
@@ -57,10 +57,10 @@ module.exports = {
           }
         ]
       }, 
-      {
+      /* {
         test: /\.json$/,
         use: 'json-loader'
-      },
+      }, */
       {
         test: /\.scss$/,
         use: [
@@ -92,7 +92,7 @@ module.exports = {
             publicPath:'dist/'
           }
         }
-      }*/
+      }
     ]
   },
   stats: "verbose"

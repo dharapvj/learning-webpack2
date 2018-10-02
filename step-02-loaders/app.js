@@ -55,13 +55,13 @@ bake();
 /*
  Showcase 4 - SCSS Loading (and bundling inside bundle.JS)
  */
-/*import './assets/scss/_container.scss';
+import './assets/scss/_container.scss';
 loadHTML('sass');
-*/
+
 /*
  Showcase 5 - JSON Loading (and bundling inside bundle.JS)
  */
-/*loadHTML('json');
+loadHTML('json');
 
 import db from './assets/data/db.json';
 let addFrnds = (frnds) => {
@@ -73,25 +73,24 @@ let addFrnds = (frnds) => {
 	});
 }
 addFrnds(db.friends);
-*/
+
 /*
  Showcase 6 - Font Loading (but NOT bundling inside bundle.JS)
  */
-/*import './assets/scss/_fonts.scss';
+import './assets/scss/_fonts.scss';
 import './assets/scss/font-demo.scss';
 loadHTML('font');
-*/
+
 
 /*
  Showcase 7 - Typescript loading (and bundling inside bundle.js)
  */
-/*import { FriendComponent } from './ts/dummy.ts';
+import { FriendComponent } from './ts/dummy.ts';
 let frndC = new FriendComponent();
 addFrnds(frndC.getFriends());
-*/
+
 /*
  Showcase 8 - image loading via file-loader.
  */
 // Load HTML fragment for this demo.
-/*loadHTML('img');
-*/
+loadHTML('img');
